@@ -1,0 +1,13 @@
+{
+    "name": "medz/fans-material-spa",
+    "description": "🌱A Set of React App that Implement Google's Material Design for Fans.",
+    "type": "library",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Seven Du",
+            "email": "shiweidu@outlook.com"
+        }
+    ],
+    "require": {}
+}
