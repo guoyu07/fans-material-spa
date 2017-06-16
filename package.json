@@ -1,0 +1,9 @@
+{
+  "name": "fans-material-spa",
+  "version": "0.0.1",
+  "description": "🌱A Set of React App that Implement Google's Material Design for Fans.",
+  "main": "src/main.js",
+  "repository": "https://github.com/medz/fans-material-spa",
+  "author": "Seven Du <shiweidu@outlook.com>",
+  "license": "Apache-2.0"
+}
