@@ -9,5 +9,19 @@
             "email": "shiweidu@outlook.com"
         }
     ],
-    "require": {}
+    "require": {
+        "illuminate/support": "^5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Medz\\Fans\\Material\\": "php/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Medz\\Fans\\Material\\Providers\\AppServiceProvider"
+            ]
+        }
+    }
 }
