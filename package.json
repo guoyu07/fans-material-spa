@@ -5,5 +5,15 @@
   "main": "src/main.js",
   "repository": "https://github.com/medz/fans-material-spa",
   "author": "Seven Du <shiweidu@outlook.com>",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "material-ui": "next",
+    "material-ui-icons": "^1.0.0-alpha.19",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "webpack": "^3.4.1"
+  }
 }
