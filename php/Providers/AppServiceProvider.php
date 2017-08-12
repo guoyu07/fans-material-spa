@@ -2,23 +2,19 @@
 
 namespace Medz\Fans\Material\Providers;
 
+use Medz\Fans\Material\Application;
 use Illuminate\Support\ServiceProvider;
+use Medz\Fans\Support\SinglePageAppcation;
 
 class AppServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        $this->app->extend(Illuminate\Contracts\Routing\ResponseFactory::class, function ($response) {
-            $response->macro('display', function ($request, $response) {
-                return $this->display($request, $response);
-            });
-
-            return $response;
-        });
+        $this->loadViewsFrom(__DIR__.'/../../views', 'fans-material-spa');
     }
 
-    protected function display()
+    public function register()
     {
-        return 'hi';
+        SinglePageAppcation::publish('medz/fans-material-spa', Application::class);
     }
 }
