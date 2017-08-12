@@ -72,7 +72,12 @@ const webpackConfig = {
       chunks: ['vendor']
     }),
     new WebpackLaravelMixManifest(),
-  ]
+  ],
+  devServer: {
+    contentBase: asstes(),
+    hot: true,
+    lazy: true,
+  }
 };
 
 export default webpackConfig;
