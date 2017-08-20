@@ -15,6 +15,10 @@ import FavoriteIcon from 'material-ui-icons/Favorite';
 const styles = () => ({
   root: {
     width: '100%',
+    position: 'fixed',
+    right: 0,
+    bottom: 0,
+    left: 0,
   },
   bottom: {
     display: 'flex',
