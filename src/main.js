@@ -1,3 +1,12 @@
-__webpack_public_path__ = window.publick;
-const a = 1;
-__webpack_public_path__ = window.publick2;
+import React from 'react';
+import { render } from 'react-dom';
+import App from './App';
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  render(
+    <App />,
+    document.querySelector('#app')
+  );
+
+});

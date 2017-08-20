@@ -71,6 +71,7 @@ const webpackConfig = {
       name: 'manifest',
       chunks: ['vendor']
     }),
+    new webpack.HotModuleReplacementPlugin(),
     new WebpackLaravelMixManifest(),
   ],
   devServer: {
