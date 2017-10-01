@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ config('app.locale') }}">
+<html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +8,6 @@
 </head>
 <body>
 <div id="app"></div>
-<script src="{{ mix('/manifest.js', 'fans-material-spa') }}"></script>
-<script src="{{ mix('/vendor.js', 'fans-material-spa') }}"></script>
-<script src="{{ mix('/app.js', 'fans-material-spa') }}"></script>
+<script src="{{ mix('app.js', 'assets/medz-fans-material-spa') }}"></script>
 </body>
 </html>
