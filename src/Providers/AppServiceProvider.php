@@ -3,8 +3,8 @@
 namespace Medz\Fans\Material\Providers;
 
 use Medz\Fans\Material\Application;
+use App\Support\SinglePageAppcation;
 use Illuminate\Support\ServiceProvider;
-use Medz\Fans\Support\SinglePageAppcation;
 
 class AppServiceProvider extends ServiceProvider
 {

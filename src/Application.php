@@ -2,7 +2,7 @@
 
 namespace Medz\Fans\Material;
 
-use Medz\Fans\Contracts\Applicable;
+use App\Contracts\Applicable;
 
 class Application implements Applicable
 {
