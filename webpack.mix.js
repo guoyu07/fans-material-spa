@@ -13,5 +13,10 @@ let mix = require('laravel-mix');
 
 mix.setPublicPath('assets');
 mix.disableNotifications();
+mix.sourceMaps(! mix.inProduction());
 
 mix.react('resources/assets/main.js', 'app.js');
+
+if (mix.inProduction()) {
+  mix.version();
+}
