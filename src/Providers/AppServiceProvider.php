@@ -10,7 +10,7 @@ class AppServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/../../views', 'fans-material-spa');
+        $this->loadViewsFrom(__DIR__.'/../../resources/views', 'fans-material-spa');
     }
 
     public function register()
