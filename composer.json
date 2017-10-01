@@ -10,11 +10,11 @@
         }
     ],
     "require": {
-        "illuminate/support": "^5.4"
+        "illuminate/support": "^5.5"
     },
     "autoload": {
         "psr-4": {
-            "Medz\\Fans\\Material\\": "php/"
+            "Medz\\Fans\\Material\\": "src/"
         }
     },
     "extra": {
