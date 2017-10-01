@@ -7,7 +7,7 @@ class Main extends Component {
   render() {
     return (
       <Switch>
-        <Route component={NoMatchPage} />
+        <Route component={NotFound} />
       </Switch>
     );
   }
