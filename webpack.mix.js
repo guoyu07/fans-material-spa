@@ -11,6 +11,7 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.setResourceRoot('resources/assets');
-mix.setPublicPath('/assets');
+mix.setPublicPath('assets');
 mix.disableNotifications();
+
+mix.react('resources/assets/main.js', 'app.js');

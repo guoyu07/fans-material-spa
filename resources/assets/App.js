@@ -6,14 +6,19 @@ import { Provider } from 'react-redux';
 import store from './store';
 
 // Application
-import ThemeProvider from './ThemeProvider';
-import RouteProvider from './RouteProvider';
+import ThemeProvider from './components/Theme';
+import RouteProvider from './components/Router';
+import Main from './components/Main';
 
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <ThemeProvider />
+        <ThemeProvider>
+          <RouteProvider>
+            <Main></Main>
+          </RouteProvider>
+        </ThemeProvider>
       </Provider>
     );
   }
