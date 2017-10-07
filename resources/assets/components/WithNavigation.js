@@ -1,17 +1,24 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import withWidth from 'material-ui/utils/withWidth';
 import Navigation from './common/Navigation';
 
 class WithNavigation extends Component {
+
+  static propTypes = {
+    width: PropTypes.string.isRequired,
+  };
+
   render() {
-    const { children } = this.props;
+    const { children, width } = this.props;
 
     return (
       <div>
-        <Navigation></Navigation>
+        <Navigation width={width}></Navigation>
         { children }
       </div>
     );
   }
 }
 
-export default WithNavigation;
+export default withWidth()(WithNavigation);
