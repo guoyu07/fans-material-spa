@@ -6,6 +6,7 @@ import HomeIcon from 'material-ui-icons/Home';
 import ForumIcon from 'material-ui-icons/Forum';
 import LocalOfferIcon from 'material-ui-icons/LocalOffer';
 import PersonIcon from 'material-ui-icons/Person';
+import AppBar from 'material-ui/AppBar';
 import style from './Navigation.style';
 
 class Navigation extends Component {
@@ -33,17 +34,18 @@ class Navigation extends Component {
     const { classes, tab } = this.props;
 
     return (
-      <BottomNavigation
-        showLabels={false}
-        className={classes.xsNav}
-        value={tab}
-        onChange={(event, tab) => this.handleTargetMobile(event, tab)}
-      >
-        <BottomNavigationButton label="首页" value="home" icon={<HomeIcon />} />
-        <BottomNavigationButton label="论坛" value="forum" icon={<ForumIcon />} />
-        <BottomNavigationButton label="标签" value="tag" icon={<LocalOfferIcon />} />
-        <BottomNavigationButton label="个人" value="person" icon={<PersonIcon />} />
-      </BottomNavigation>
+      <AppBar position="fixed" className={classes.xsRoot}>
+        <BottomNavigation
+          showLabels={false}
+          value={tab}
+          onChange={(event, tab) => this.handleTargetMobile(event, tab)}
+        >
+          <BottomNavigationButton label="首页" value="home" icon={<HomeIcon />} />
+          <BottomNavigationButton label="论坛" value="forum" icon={<ForumIcon />} />
+          <BottomNavigationButton label="标签" value="tag" icon={<LocalOfferIcon />} />
+          <BottomNavigationButton label="个人" value="person" icon={<PersonIcon />} />
+        </BottomNavigation>
+      </AppBar>
     );
   }
 

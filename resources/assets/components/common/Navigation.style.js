@@ -1,8 +1,8 @@
 import withStyles from 'material-ui/styles/withStyles';
 export default withStyles(() => ({
-  xsNav: {
+  xsRoot: {
     width: '100%',
-    position: 'fixed',
+    top: 'unset',
     bottom: 0,
-  }
+  },
 }));
