@@ -16,22 +16,28 @@ class TopicListItem extends Component {
 
   static propTypes = {
     classes: PropTypes.object.isRequired,
+    topic: PropTypes.object.isRequired,
   }
 
   render() {
 
-    const { classes } = this.props;
+    const { classes, topic } = this.props;
+    const { user, forum } = topic;
+    const username = user.name ? `${name}(#${user.id})` : user.login;
+
+    console.log(topic);
 
     return (
       <Card className={classes.card} elevation={1}>
 
         <CardHeader
-          avatar={
-            <Avatar aria-label="Seven">S</Avatar>
+          avatar={user.avatar
+            ? <Avatar aria-label={username} src={user.avatar} />
+            : <Avatar aria-label={username}>{ username[0] }</Avatar>
           }
           title={
             <Typography component="span">
-              Seven &raquo; <Typography className={classes.forum} component="a">demo</Typography>
+              { username } &raquo; <Typography className={classes.forum} component="a">{ forum.name }</Typography>
             </Typography>
           }
           subheader="September 14, 2016"
@@ -39,18 +45,18 @@ class TopicListItem extends Component {
 
         <CardContent>
           <Typography component="div">
-            第十第一个话题
+            { topic.subject }
           </Typography>
         </CardContent>
 
         <CardActions disableActionSpacing>
 
           <Button className={classes.button} disableRipple disableFocusRipple>
-            <VisibilityIcon />&nbsp;200
+            <VisibilityIcon />&nbsp;{ topic.view_count }
           </Button>
 
           <Button className={classes.button} disableRipple disableFocusRipple>
-            <CommentIcon />&nbsp;20
+            <CommentIcon />&nbsp;{ topic.post_count }
           </Button>
 
         </CardActions>
