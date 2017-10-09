@@ -25,8 +25,6 @@ class TopicListItem extends Component {
     const { user, forum } = topic;
     const username = user.name ? `${name}(#${user.id})` : user.login;
 
-    console.log(topic);
-
     return (
       <Card className={classes.card} elevation={1}>
 
@@ -40,7 +38,7 @@ class TopicListItem extends Component {
               { username } &raquo; <Typography className={classes.forum} component="a">{ forum.name }</Typography>
             </Typography>
           }
-          subheader="September 14, 2016"
+          subheader={ topic.created_at }
         />
 
         <CardContent>
