@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import withWidth from 'material-ui/utils/withWidth';
 import Navigation from './common/Navigation';
+import AppBar from './common/AppBar';
 import style from './WithNavigation.style';
 
 class WithNavigation extends Component {
@@ -18,6 +19,7 @@ class WithNavigation extends Component {
 
     return (
       <div className={classNames(classes.root, { [classes.xs]: width === 'xs', [classes.high]: width !== 'xs' })}>
+        <AppBar />
         <Navigation width={width} tab={tab}></Navigation>
         { children }
       </div>
