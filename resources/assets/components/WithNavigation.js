@@ -20,7 +20,7 @@ class WithNavigation extends Component {
     return (
       <div className={classNames(classes.root, { [classes.xs]: width === 'xs', [classes.high]: width !== 'xs' })}>
         <AppBar />
-        {/*<Navigation width={width} tab={tab}></Navigation>*/}
+        <Navigation width={width} tab={tab}></Navigation>
         { children }
       </div>
     );

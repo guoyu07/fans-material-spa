@@ -6,7 +6,7 @@ export default withStyles(() => ({
   },
   xs: {
     paddingTop: 56,
-    // paddingBottom: 56,
+    paddingBottom: 56,
   },
   high: {
     paddingTop: 64,
