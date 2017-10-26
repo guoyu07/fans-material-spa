@@ -5,7 +5,10 @@ export default withStyles(() => ({
     boxSizing: 'border-box',
   },
   xs: {
-    paddingBottom: 56,
+    paddingTop: 56,
+    // paddingBottom: 56,
   },
-  high: {},
+  high: {
+    paddingTop: 64,
+  },
 }));
