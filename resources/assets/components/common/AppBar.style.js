@@ -7,4 +7,8 @@ export default withStyles(() => ({
     marginLeft: -12,
     marginRight: 20,
   },
+  avatar: {
+    width: 32,
+    height: 32,
+  },
 }));
