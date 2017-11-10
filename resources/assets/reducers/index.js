@@ -1,5 +1,1 @@
-import { combineReducers } from 'redux';
-
-const reducers = {};
-
-export default combineReducers(reducers);
+export { default as user } from './user';
