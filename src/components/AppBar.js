@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 // Material UI
 import AppBarProvider from 'material-ui/AppBar';
@@ -12,6 +13,20 @@ import styles from './AppBar.style';
 // Icons.
 import MenuIcon from 'material-ui-icons/Menu';
 
+// Components.
+import AppBarTitle from './AppBarTitle';
+
+/**
+ * The App bar map state to props.
+ *
+ * @param {String} options.title
+ * @return {Object}
+ * @author Seven Du <shiweidu@outlook.com>
+ */
+function mapStateToProps ({ title }) {
+  return { title };
+};
+
 class AppBar extends Component {
   /**
    * The component render.
@@ -20,6 +35,10 @@ class AppBar extends Component {
    * @author Seven Du <shiweidu@outlook.com>
    */
   render () {
+
+    const { title } = this.props;
+    console.log(this.props);
+
     return (
       <AppBarProvider position="fixed">
         <Toolbar>
@@ -28,10 +47,13 @@ class AppBar extends Component {
               <MenuIcon />
             </IconButton>
           </Hidden>
+          <AppBarTitle title={title} />
         </Toolbar>
       </AppBarProvider>
     );
   }
 }
 
-export default styles(AppBar);
+export default styles(
+  connect(mapStateToProps)(AppBar)
+);

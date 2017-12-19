@@ -13,8 +13,13 @@ import AppBar from './AppBar';
 
 class Main extends Component {
 
+  /**
+   * The component prop types.
+   *
+   * @type {Object}
+   */
   static propTypes = {
-    // width: PropTypes.string.isRequired,
+    width: PropTypes.string.isRequired,
     classes: PropTypes.object.isRequired,
   };
 
