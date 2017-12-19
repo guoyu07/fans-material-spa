@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 // Material UI
 import AppBarProvider from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
+import Button from 'material-ui/Button';
 import IconButton from 'material-ui/IconButton';
 import Hidden from 'material-ui/Hidden';
 
@@ -16,6 +17,7 @@ import MenuIcon from 'material-ui-icons/Menu';
 
 // Components.
 import AppBarTitle from './AppBarTitle';
+import AppBarSearch from './AppBarSearch';
 
 /**
  * The App bar map state to props.
@@ -48,7 +50,7 @@ class AppBar extends Component {
    */
   render () {
 
-    const { title } = this.props;
+    const { title, width } = this.props;
 
     return (
       <AppBarProvider position="fixed">
@@ -59,6 +61,8 @@ class AppBar extends Component {
             </IconButton>
           </Hidden>
           <AppBarTitle title={title} />
+          <AppBarSearch width={width} />
+          <Button color="contrast" aria-label="登录">登录</Button>
         </Toolbar>
       </AppBarProvider>
     );

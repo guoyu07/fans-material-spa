@@ -27,7 +27,7 @@ class AppBarTitle extends Component {
     const { title, classes } = this.props;
 
     return (
-      <Typography type="title" color="inherit" className={classes.root}>
+      <Typography aria-label="标题" type="title" color="inherit" className={classes.root}>
         { title }
       </Typography>
     );
