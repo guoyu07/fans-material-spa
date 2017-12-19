@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 // Material UI
 import AppBarProvider from 'material-ui/AppBar';
@@ -28,6 +29,17 @@ function mapStateToProps ({ title }) {
 };
 
 class AppBar extends Component {
+
+  /**
+   * The component prop types.
+   *
+   * @type {Object}
+   */
+  static propTypes = {
+    width: PropTypes.string.isRequired,
+    classes: PropTypes.object.isRequired,
+  };
+
   /**
    * The component render.
    *
@@ -37,7 +49,6 @@ class AppBar extends Component {
   render () {
 
     const { title } = this.props;
-    console.log(this.props);
 
     return (
       <AppBarProvider position="fixed">

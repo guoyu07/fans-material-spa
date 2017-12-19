@@ -30,9 +30,12 @@ class Main extends Component {
    * @author Seven Du <shiweidu@outlook.com>
    */
   render () {
+
+    const { width } = this.props;
+
     return (
       <div className={this.rootClassName()}>
-        <AppBar />
+        <AppBar width={width} />
         3
       </div>
     );

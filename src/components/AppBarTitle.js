@@ -17,8 +17,13 @@ class AppBarTitle extends Component {
     classes: PropTypes.object.isRequired,
   };
 
+  /**
+   * The component render.
+   *
+   * @return {Element|Node}
+   * @author Seven Du <shiweidu@outlook.com>
+   */
   render () {
-
     const { title, classes } = this.props;
 
     return (
@@ -26,6 +31,17 @@ class AppBarTitle extends Component {
         { title }
       </Typography>
     );
+  }
+
+  /**
+   * Component will receive props.
+   *
+   * @param {String} options.title
+   * @return {void}
+   * @author Seven Du <shiweidu@outlook.com>
+   */
+  componentWillReceiveProps ({ title }) {
+    document.title = title;
   }
 }
 

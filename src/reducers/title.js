@@ -1,4 +1,4 @@
-import { SET } from '../actions';
+import { SET_APP_TITLE } from '../constants';
 
 /**
  * Default state.
@@ -17,5 +17,5 @@ const defaultTitle = 'Fans 2';
  * @author Seven Du <shiweidu@outlook.com>
  */
 export default function (title = defaultTitle, { type, payload }) {
-  return type === SET ? payload : title;
+  return type === SET_APP_TITLE ? payload : title;
 };
