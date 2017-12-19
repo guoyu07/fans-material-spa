@@ -12,4 +12,12 @@ export default withStyles(theme => ({
       padding: 0,
     },
   },
+  root: {
+    minHeight: '100vh',
+    boxSizing: 'border-box',
+    paddingTop: 64,
+  },
+  xsWidth: {
+    paddingTop: 56,
+  }
 }));
