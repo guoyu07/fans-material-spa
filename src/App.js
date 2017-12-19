@@ -1,19 +1,29 @@
+// React
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+// Redux
+import { Provider } from 'react-redux';
+import store from './createStore';
+
+// Mateial UI
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import theme from './createTheme';
+
+// Router
+import BrowserRouter from 'react-router-dom/BrowserRouter';
+import renderRoutes from 'react-router-config/renderRoutes';
+import routes from './createRoutes';
 
 class App extends Component {
-  render() {
+  render () {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <MuiThemeProvider theme={theme}>
+        <Provider store={store}>
+          <BrowserRouter>
+            { renderRoutes(routes) }
+          </BrowserRouter>
+        </Provider>
+      </MuiThemeProvider>
     );
   }
 }
