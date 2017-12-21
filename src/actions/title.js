@@ -8,7 +8,7 @@ import { SET_APP_TITLE } from '../constants';
  * @return {Function}
  * @author Seven Du <shiweidu@outlook.com>
  */
-export const setAppTitle = title => dispatch => {
+export const setAppTitle = (title: string) => (dispatch: Function) => {
   document.title = title;
   dispatch(generateAction(SET_APP_TITLE, title));
 };

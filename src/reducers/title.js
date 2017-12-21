@@ -1,3 +1,5 @@
+// @flow
+
 import { SET_APP_TITLE } from '../constants';
 
 /**
@@ -5,7 +7,17 @@ import { SET_APP_TITLE } from '../constants';
  *
  * @type {String}
  */
-const defaultTitle = 'Fans 2';
+const defaultTitle: string = 'Fans 2';
+
+/**
+ * The payload types.
+ *
+ * @type {Object}
+ */
+type Payload = {
+  type: string,
+  payload: string,
+};
 
 /**
  * Export App title reducer.
@@ -16,6 +28,10 @@ const defaultTitle = 'Fans 2';
  * @return {String}
  * @author Seven Du <shiweidu@outlook.com>
  */
-export default function (title = defaultTitle, { type, payload }) {
-  return type === SET_APP_TITLE ? payload : title;
+export default function (title: string = defaultTitle, { type, payload }: Payload): string {
+  if (type === SET_APP_TITLE) {
+    return payload;
+  }
+
+  return title;
 };

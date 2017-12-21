@@ -1,5 +1,6 @@
+// @flow
 // React
-import React, { Component } from 'react';
+import * as React from 'react';
 
 // Redux
 import { Provider } from 'react-redux';
@@ -14,8 +15,15 @@ import BrowserRouter from 'react-router-dom/BrowserRouter';
 import renderRoutes from 'react-router-config/renderRoutes';
 import routes from './createRoutes';
 
-class App extends Component {
-  render () {
+class App extends React.Component <*> {
+
+  /**
+   * The App render.
+   *
+   * @return {React.Node}
+   * @author Seven Du <shiweidu@outlook.com>
+   */
+  render (): React.Node {
     return (
       <MuiThemeProvider theme={theme}>
         <Provider store={store}>

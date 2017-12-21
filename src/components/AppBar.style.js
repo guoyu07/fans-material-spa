@@ -1,4 +1,5 @@
+// @flow
 import withStyles from 'material-ui/styles/withStyles';
 
-export default withStyles(theme => ({
+export default withStyles((theme: Object) => ({
 }));

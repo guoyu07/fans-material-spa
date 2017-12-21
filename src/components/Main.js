@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -11,7 +13,17 @@ import styles from './Main.style';
 // Components.
 import AppBar from './AppBar';
 
-class Main extends Component {
+/**
+ * The component Props types.
+ *
+ * @type {Object}
+ */
+type Props = {
+  width: string,
+  classes: Object,
+};
+
+class Main extends Component <Props> {
 
   /**
    * The component prop types.
@@ -44,10 +56,10 @@ class Main extends Component {
   /**
    * Get the component root element class name.
    *
-   * @return {String}
+   * @return {string}
    * @author Seven Du <shiweidu@outlook.com>
    */
-  rootClassName () {
+  rootClassName (): string {
     const { classes, width } = this.props;
 
     return classNames(classes.root, {

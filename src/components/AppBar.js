@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+// @flow
+
+import * as React from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 
 // Material UI
 import AppBarProvider from 'material-ui/AppBar';
@@ -30,25 +31,25 @@ function mapStateToProps ({ title }) {
   return { title };
 };
 
-class AppBar extends Component {
+/**
+ * The component Props types.
+ *
+ * @type {Object}
+ */
+type Props = {
+  width: string,
+  classes: Object,
+  title: string,
+};
 
-  /**
-   * The component prop types.
-   *
-   * @type {Object}
-   */
-  static propTypes = {
-    width: PropTypes.string.isRequired,
-    classes: PropTypes.object.isRequired,
-  };
-
+class AppBar extends React.Component <Props> {
   /**
    * The component render.
    *
-   * @return {Element|Node}
+   * @return {React.Node}
    * @author Seven Du <shiweidu@outlook.com>
    */
-  render () {
+  render (): React.Node {
 
     const { title, width } = this.props;
 

@@ -1,1 +1,3 @@
-export const SET_APP_TITLE = '@app/meta:title';
+// @flow
+
+export const SET_APP_TITLE: string = '@app/meta:title';

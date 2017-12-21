@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+// @flow
+
+import * as React from 'react';
 import styles from './AppBarSearch.style';
 
 // Material UI
@@ -8,25 +9,19 @@ import IconButton from 'material-ui/IconButton';
 // Icons.
 import SearchIcon from 'material-ui-icons/Search';
 
-class AppBarSearch extends Component {
+type Props = {
+  width: string,
+  classes: Object,
+};
 
-  /**
-   * The component prop types.
-   *
-   * @type {Object}
-   */
-  static propTypes = {
-    width: PropTypes.string.isRequired,
-    classes: PropTypes.object.isRequired,
-  };
-
+class AppBarSearch extends React.Component <Props> {
   /**
    * The component render.
    *
-   * @return {Element|Node}
+   * @return {React.Node}
    * @author Seven Du <shiweidu@outlook.com>
    */
-  render () {
+  render (): React.Node {
 
     const { width } = this.props;
 
@@ -40,10 +35,10 @@ class AppBarSearch extends Component {
   /**
    * The component width === xs render Element|Node .
    *
-   * @return {Element|Node}
+   * @return {React.Node}
    * @author Seven Du <shiweidu@outlook.com>
    */
-  renderSearchButton () {
+  renderSearchButton (): React.Node {
     return (
       <IconButton color="contrast" aria-label="搜索">
         <SearchIcon />
@@ -54,10 +49,10 @@ class AppBarSearch extends Component {
   /**
    * Render the component full search input.
    *
-   * @return {Element|Node}
+   * @return {React.Node}
    * @author Seven Du <shiweidu@outlook.com>
    */
-  renderFull () {
+  renderFull (): React.Node {
 
     const { classes } = this.props;
 

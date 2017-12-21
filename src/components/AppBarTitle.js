@@ -1,22 +1,21 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+// @flow
+import * as React from 'react';
 import styles from './AppBarTitle.style';
 
 // Material UI
 import Typography from 'material-ui/Typography';
 
-class AppBarTitle extends Component {
+/**
+ * The component Props types.
+ *
+ * @type {Object}
+ */
+type Props = {
+  title: string,
+  classes: Object,
+};
 
-  /**
-   * The component prop types.
-   *
-   * @type {Object}
-   */
-  static propTypes = {
-    title: PropTypes.string.isRequired,
-    classes: PropTypes.object.isRequired,
-  };
-
+class AppBarTitle extends React.Component <Props> {
   /**
    * The component render.
    *
@@ -40,7 +39,7 @@ class AppBarTitle extends Component {
    * @return {void}
    * @author Seven Du <shiweidu@outlook.com>
    */
-  componentWillReceiveProps ({ title }) {
+  componentWillReceiveProps ({ title }: Props) {
     document.title = title;
   }
 }
