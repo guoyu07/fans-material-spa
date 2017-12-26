@@ -23,9 +23,9 @@ type Props = {
   width: string,
   classes: Object,
   history: Object,
-  location: Array <{
+  location: {
     pathname: string,
-  }>
+  },
 };
 
 /**
@@ -69,7 +69,7 @@ class Navigation extends React.Component <Props, State> {
   }
 
   getCheckedButton (): string {
-    const { location: { pathname } } = this.props;
+    const { pathname } = this.props.location;
     const routes = {
       '/': 'home',
       '/forums': 'forum',
