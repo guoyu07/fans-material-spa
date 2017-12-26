@@ -20,7 +20,7 @@ type Props = {
   width: string,
   classes: Object,
   route: {
-    routes: Array,
+    routes: Array<Object>,
   },
 };
 
