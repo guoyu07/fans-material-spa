@@ -12,6 +12,7 @@ import styles from './Main.style';
 
 // Components.
 import AppBar from './AppBar';
+import Navigation from './Navigation';
 
 /**
  * The component Props types.
@@ -48,7 +49,7 @@ class Main extends Component <Props> {
     return (
       <div className={this.rootClassName()}>
         <AppBar width={width} />
-        3
+        <Navigation width={width} />
       </div>
     );
   }
