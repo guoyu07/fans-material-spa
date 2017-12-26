@@ -28,6 +28,5 @@ export default withStyles((theme: Object) => ({
   },
   xsWidth: {
     paddingTop: 56,
-    paddingBottom: 56,
   }
 }));

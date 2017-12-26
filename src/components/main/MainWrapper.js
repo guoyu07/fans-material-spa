@@ -3,15 +3,13 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import renderRoutes from 'react-router-config/renderRoutes';
+import styles from './MainWrapper.style';
 
 // Mateial UI
-import withWidth from 'material-ui/utils/withWidth';
+// import withWidth from 'material-ui/utils/withWidth';
 
-// style
-import styles from './Main.style';
-
-// Components.
-import AppBar from './AppBar';
+// Components
+import Navigation from '../Navigation';
 
 /**
  * The component Props types.
@@ -24,23 +22,17 @@ type Props = {
   route: {
     routes: Array,
   },
-  // children?: React.Node,
 };
 
-class Main extends React.Component <Props> {
-  /**
-   * The Main Component render.
-   *
-   * @return {Element|Node}
-   * @author Seven Du <shiweidu@outlook.com>
-   */
+class MainWrapper extends React.Component <Props> {
   render () {
 
     const { width, route: { routes } } = this.props;
+    console.log(this.props);
 
     return (
       <div className={this.rootClassName()}>
-        <AppBar width={width} />
+        <Navigation width={width} />
         { renderRoutes(routes, { width }) }
       </div>
     );
@@ -56,11 +48,9 @@ class Main extends React.Component <Props> {
     const { classes, width } = this.props;
 
     return classNames(classes.root, {
-      [classes.xsWidth]: width === 'xs',
+      [classes.xsRoot]: width === 'xs',
     });
   }
 }
 
-export default styles(
-  withWidth()(Main)
-);
+export default styles(MainWrapper);

@@ -1,6 +1,7 @@
 // @flow
 
 import Main from './components/Main';
+import MainWrapper from './components/main/MainWrapper';
 
 /**
  * routes.
@@ -9,6 +10,11 @@ import Main from './components/Main';
  */
 const routes: Object = {
   component: Main,
+  routes: [
+    {component: MainWrapper, routes: [
+      { path: '/', exact: true }
+    ]},
+  ]
 };
 
 export default [routes];
