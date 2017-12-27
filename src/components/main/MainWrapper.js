@@ -6,9 +6,12 @@ import renderRoutes from 'react-router-config/renderRoutes';
 import styles from './MainWrapper.style';
 
 // Mateial UI
+import Hidden from 'material-ui/Hidden';
 // import withWidth from 'material-ui/utils/withWidth';
 
 // Components
+import AppBar from '../AppBar';
+import AppDrawer from '../AppDrawer';
 import Navigation from '../Navigation';
 
 /**
@@ -25,13 +28,16 @@ type Props = {
 };
 
 class MainWrapper extends React.Component <Props> {
-  render () {
+  render (): React.Node {
 
     const { width, route: { routes } } = this.props;
-    console.log(this.props);
 
     return (
       <div className={this.rootClassName()}>
+        <Hidden smUp={true}>
+          <AppBar width={width} />
+          <AppDrawer width={width} />
+        </Hidden>
         <Navigation width={width} />
         { renderRoutes(routes, { width }) }
       </div>

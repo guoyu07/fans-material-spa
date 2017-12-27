@@ -1,7 +1,6 @@
 // @flow
 
 import * as React from 'react';
-import classNames from 'classnames';
 import renderRoutes from 'react-router-config/renderRoutes';
 
 // Mateial UI
@@ -36,28 +35,20 @@ class Main extends React.Component <Props> {
    */
   render () {
 
-    const { width, route: { routes } } = this.props;
+    const { width, route: { routes }, classes } = this.props;
+
+    if (width === 'xs') {
+      return renderRoutes(routes, { width })
+    }
 
     return (
-      <div className={this.rootClassName()}>
+      <div className={classes.root}>
         <AppBar width={width} />
-        { renderRoutes(routes, { width }) }
+        <div className={classes.main}>
+          { renderRoutes(routes, { width }) }
+        </div>
       </div>
     );
-  }
-
-  /**
-   * Get the component root element class name.
-   *
-   * @return {string}
-   * @author Seven Du <shiweidu@outlook.com>
-   */
-  rootClassName (): string {
-    const { classes, width } = this.props;
-
-    return classNames(classes.root, {
-      [classes.xsWidth]: width === 'xs',
-    });
   }
 }
 

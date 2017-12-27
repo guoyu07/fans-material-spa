@@ -7,7 +7,7 @@ import { SET_APP_TITLE } from '../constants';
  *
  * @type {String}
  */
-const defaultTitle: string = 'Fans 2';
+const defaultTitle: string = 'Fans';
 
 /**
  * The payload types.

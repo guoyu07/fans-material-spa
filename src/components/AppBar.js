@@ -2,16 +2,14 @@
 
 import * as React from 'react';
 import { connect } from 'react-redux';
+import styles from './AppBar.style';
+import { setAppDrawerSwitch } from '../actions';
 
 // Material UI
 import AppBarProvider from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Button from 'material-ui/Button';
 import IconButton from 'material-ui/IconButton';
-import Hidden from 'material-ui/Hidden';
-
-// Style.
-import styles from './AppBar.style';
 
 // Icons.
 import MenuIcon from 'material-ui-icons/Menu';
@@ -23,13 +21,20 @@ import AppBarSearch from './AppBarSearch';
 /**
  * The App bar map state to props.
  *
- * @param {String} options.title
+ * @param {string} options.title
  * @return {Object}
  * @author Seven Du <shiweidu@outlook.com>
  */
-function mapStateToProps ({ title }) {
-  return { title };
+function mapStateToProps ({ title, appDrawer }) {
+  return { title, appDrawerOpen: appDrawer };
 };
+
+/**
+ * Map dispatch to props.
+ *
+ * @type {Object}
+ */
+const mapDispatchToProps: Object = { setAppDrawerSwitch };
 
 /**
  * The component Props types.
@@ -37,9 +42,11 @@ function mapStateToProps ({ title }) {
  * @type {Object}
  */
 type Props = {
+  appDrawerOpen: boolean,
   width: string,
   classes: Object,
   title: string,
+  setAppDrawerSwitch: Function,
 };
 
 class AppBar extends React.Component <Props> {
@@ -51,16 +58,14 @@ class AppBar extends React.Component <Props> {
    */
   render (): React.Node {
 
-    const { title, width } = this.props;
+    const { title, width, classes } = this.props;
 
     return (
       <AppBarProvider position="fixed">
         <Toolbar>
-          <Hidden smUp={true}>
-            <IconButton color="contrast" aria-label="菜单">
-              <MenuIcon />
-            </IconButton>
-          </Hidden>
+          <IconButton onClick={() => this.handleToggleDrawer()} classes={{ root: classes.menu }} color="contrast" aria-label="菜单">
+            <MenuIcon />
+          </IconButton>
           <AppBarTitle title={title} />
           <AppBarSearch width={width} />
           <Button color="contrast" aria-label="登录">登录</Button>
@@ -68,8 +73,13 @@ class AppBar extends React.Component <Props> {
       </AppBarProvider>
     );
   }
+
+  handleToggleDrawer () {
+    const { appDrawerOpen, setAppDrawerSwitch } = this.props;
+    setAppDrawerSwitch(! appDrawerOpen);
+  }
 }
 
 export default styles(
-  connect(mapStateToProps)(AppBar)
+  connect(mapStateToProps, mapDispatchToProps)(AppBar)
 );

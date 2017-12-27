@@ -18,6 +18,9 @@ export default withStyles((theme: Object) => ({
     },
     '*, *:before, *:after': {
       boxSizing: 'inherit',
+    },
+    '#root': {
+      minHeight: '100vh',
     }
   },
   root: {
@@ -26,7 +29,7 @@ export default withStyles((theme: Object) => ({
     boxSizing: 'border-box',
     paddingTop: 64,
   },
-  xsWidth: {
-    paddingTop: 56,
+  main: {
+    marginLeft: 100,
   }
 }));

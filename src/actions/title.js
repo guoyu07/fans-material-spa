@@ -1,3 +1,5 @@
+// @flow
+
 import generateAction from '../utils/generateAction';
 import { SET_APP_TITLE } from '../constants';
 

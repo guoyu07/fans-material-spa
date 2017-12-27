@@ -8,6 +8,8 @@ export default withStyles(() => ({
     boxSizing: 'border-box',
   },
   xsRoot: {
+    paddingTop: 56,
     paddingBottom: 56,
+    minHeight: '100vh',
   }
 }));
