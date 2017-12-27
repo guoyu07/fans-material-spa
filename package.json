@@ -5,10 +5,11 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build -m \"chore: Build SPA & Update assets.\" -t",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && npm run build:404.html",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "flow": "flow"
+    "flow": "flow",
+    "build:404.html": "node scripts/build-404.js"
   },
   "dependencies": {
     "classnames": "^2.2.5",
