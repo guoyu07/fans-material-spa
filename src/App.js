@@ -1,4 +1,5 @@
 // @flow
+
 // React
 import * as React from 'react';
 
@@ -14,6 +15,7 @@ import theme from './createTheme';
 import BrowserRouter from 'react-router-dom/BrowserRouter';
 import renderRoutes from 'react-router-config/renderRoutes';
 import routes from './createRoutes';
+import { browserBasename } from './config';
 
 class App extends React.Component <*> {
 
@@ -27,7 +29,7 @@ class App extends React.Component <*> {
     return (
       <MuiThemeProvider theme={theme}>
         <Provider store={store}>
-          <BrowserRouter>
+          <BrowserRouter basename={browserBasename}>
             { renderRoutes(routes) }
           </BrowserRouter>
         </Provider>
