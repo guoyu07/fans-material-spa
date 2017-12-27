@@ -3,7 +3,7 @@
   "homepage": "https://medz.github.io/fans-material-spa",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build -m \"chore: Build SPA & Update assets.\"",
+    "deploy": "gh-pages -d build -m \"chore: Build SPA & Update assets.\" -t",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
