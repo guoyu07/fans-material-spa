@@ -1,7 +1,9 @@
 {
   "private": true,
-  "homepage" : "http://medz.github.io/fans-material-spa",
+  "homepage": "http://medz.github.io/fans-material-spa",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
@@ -22,6 +24,7 @@
   },
   "devDependencies": {
     "flow-bin": "^0.61.0",
+    "gh-pages": "^1.1.0",
     "react-scripts": "^1.0.17"
   }
 }
