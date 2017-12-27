@@ -1,5 +1,6 @@
 {
   "private": true,
+  "homepage" : "http://medz.github.io/fans-material-spa",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
