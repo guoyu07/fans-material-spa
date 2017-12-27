@@ -1,9 +1,9 @@
 {
   "private": true,
-  "homepage": "http://medz.github.io/fans-material-spa",
+  "homepage": "https://medz.github.io/fans-material-spa",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d build -m \"chore: Build SPA & Update accets.\"",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
