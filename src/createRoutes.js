@@ -2,7 +2,7 @@
 
 import Main from './components/Main';
 import MainWrapper from './components/main/MainWrapper';
-import HomePage from './pages/Home';
+import Home from './components/main/Home';
 
 /**
  * routes.
@@ -12,8 +12,8 @@ import HomePage from './pages/Home';
 const routes: Object = {
   component: Main,
   routes: [
-    {path: '/', component: MainWrapper, routes: [
-      { path: '/', exact: true, component: HomePage },
+    {component: MainWrapper, routes: [
+      { path: '/', exact: true, component: Home },
     ]},
   ]
 };
