@@ -15,7 +15,7 @@ class Person extends React.Component <Props> {
     const { width } = this.props;
 
     return (
-      <AppBarProvider width={width} title="个人">
+      <AppBarProvider width={width} title="个人资料">
         <NavigationProvider width={width} value="person">
           Person.
         </NavigationProvider>

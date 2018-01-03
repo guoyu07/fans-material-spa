@@ -24,7 +24,7 @@ class Tag extends React.Component <Props> {
   }
 
   componentDidMount() {
-    browserTitle('首页');
+    browserTitle('话题');
   }
 }
 
