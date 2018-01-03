@@ -1,10 +1,8 @@
-// @flow
-
-function queryMeta (name) {
+function queryMeta (name: string) {
   return document.head.querySelector(`meta[name="${name}"]`);
 }
 
-function parserURL (url) {
+function parserURL (url: string) {
   let parser = document.createElement('a');
   parser.href = url;
 

@@ -1,8 +1,32 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+// React
+import * as React from 'react';
+import { render } from 'react-dom';
 // import registerServiceWorker from './registerServiceWorker';
 
+// Redux
+import { Provider as ReduxProvider } from 'react-redux';
+import store from './createStore';
+
+// Mateial UI
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import theme from './createTheme';
+
+// Modules
 import App from './App';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+/**
+ * The application root Node.
+ *
+ * @return {React.Node}
+ * @author Seven Du <shiweidu@outlook.com>
+ */
+const Root = () => (
+  <MuiThemeProvider theme={theme}>
+    <ReduxProvider store={store}>
+      <App />
+    </ReduxProvider>
+  </MuiThemeProvider>
+);
+
+render(<Root />, document.getElementById('root'));
 // registerServiceWorker();

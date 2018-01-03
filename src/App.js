@@ -1,41 +1,57 @@
 // @flow
 
-// React
 import * as React from 'react';
-
-// Redux
-import { Provider } from 'react-redux';
-import store from './createStore';
-
-// Mateial UI
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import theme from './createTheme';
+import withStyles from 'material-ui/styles/withStyles';
+import withWidth from 'material-ui/utils/withWidth';
 
 // Router
 import BrowserRouter from 'react-router-dom/BrowserRouter';
 import renderRoutes from 'react-router-config/renderRoutes';
 import routes from './createRoutes';
+
+// Modules
 import { browserBasename } from './config';
 
-class App extends React.Component <*> {
+const styles: Function = withStyles((theme: Object) => ({
+  '@global': {
+    html: {
+      background: theme.palette.background.default,
+      WebkitFontSmoothing: 'antialiased', // Antialiasing.
+      MozOsxFontSmoothing: 'grayscale', // Antialiasing.
+      boxSizing: 'border-box',
+      '@media print': {
+        background: theme.palette.common.white,
+      },
+    },
+    body: {
+      margin: 0,
+      padding: 0,
+    },
+    '*, *:before, *:after': {
+      boxSizing: 'inherit',
+    },
+    '#root': {
+      minHeight: '100vh',
+    }
+  },
+}));
 
-  /**
-   * The App render.
-   *
-   * @return {React.Node}
-   * @author Seven Du <shiweidu@outlook.com>
-   */
-  render (): React.Node {
+type Props = {
+  width: string,
+};
+
+class App extends React.Component<Props> {
+  render(): React.Node {
+    const { width } = this.props;
+
     return (
-      <MuiThemeProvider theme={theme}>
-        <Provider store={store}>
-          <BrowserRouter basename={browserBasename}>
-            { renderRoutes(routes) }
-          </BrowserRouter>
-        </Provider>
-      </MuiThemeProvider>
+      <BrowserRouter basename={browserBasename}>
+        { renderRoutes(routes, { width }) }
+      </BrowserRouter>
     );
   }
 }
 
-export default App;
+export default styles(
+  withWidth()(App)
+);

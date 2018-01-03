@@ -4,10 +4,10 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router'
 import { Link } from 'react-router-dom';
-import styles from './AppDrawer.style';
-import { setAppDrawerSwitch } from '../actions';
+import { setAppDrawerSwitch } from '../../actions';
 
 // Material UI
+import withStyles from 'material-ui/styles/withStyles';
 import Drawer from 'material-ui/Drawer';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
@@ -22,8 +22,14 @@ import ForumIcon from 'material-ui-icons/Forum';
 import LocalOfferIcon from 'material-ui-icons/LocalOffer';
 import PersonIcon from 'material-ui-icons/Person';
 
-// Components
-// import AppBar from './AppBar';
+const styles = withStyles(() => ({
+  paper: {
+    width: 256,
+  },
+  title: {
+    flex: 1,
+  },
+}));
 
 /**
  * Map the state to props.
@@ -58,9 +64,10 @@ type Props = {
   }
 };
 
-class AppDrawer extends React.Component <Props> {
+class MobileAppDrawer extends React.Component <Props> {
   render (): React.Node {
     const { classes, open } = this.props;
+    const date = new Date();
 
     return (
       <Drawer
@@ -87,19 +94,19 @@ class AppDrawer extends React.Component <Props> {
             </ListItemIcon>
             <ListItemText primary="首页" />
           </ListItem>
-          <ListItem component={Link} to="/" onClick={(event) => this.handleReplaceRoute(event, '/forums')}>
+          <ListItem component={Link} to="/forums" onClick={(event) => this.handleReplaceRoute(event, '/forums')}>
             <ListItemIcon>
               <ForumIcon />
             </ListItemIcon>
             <ListItemText primary="论坛" />
           </ListItem>
-          <ListItem component={Link} to="/" onClick={(event) => this.handleReplaceRoute(event, '/tags')}>
+          <ListItem component={Link} to="/tags" onClick={(event) => this.handleReplaceRoute(event, '/tags')}>
             <ListItemIcon>
               <LocalOfferIcon />
             </ListItemIcon>
             <ListItemText primary="标签" />
           </ListItem>
-          <ListItem component={Link} to="/" onClick={(event) => this.handleReplaceRoute(event, '/person')}>
+          <ListItem component={Link} to="/person" onClick={(event) => this.handleReplaceRoute(event, '/person')}>
             <ListItemIcon>
               <PersonIcon />
             </ListItemIcon>
@@ -107,7 +114,7 @@ class AppDrawer extends React.Component <Props> {
           </ListItem>
         </List>
         <Typography gutterBottom align="center">
-          ©2017 Seven Du.
+          © { date.getFullYear() } Seven Du.
         </Typography>
       </Drawer>
     );
@@ -128,6 +135,6 @@ class AppDrawer extends React.Component <Props> {
 
 export default styles(
   withRouter(
-    connect(mapStateToProps, mapDispatchToProps)(AppDrawer)
+    connect(mapStateToProps, mapDispatchToProps)(MobileAppDrawer)
   )
 );
