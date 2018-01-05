@@ -1,8 +1,8 @@
-function queryMeta (name: string) {
+function queryMeta (name) {
   return document.head.querySelector(`meta[name="${name}"]`);
 }
 
-function parserURL (url: string) {
+function parserURL (url) {
   let parser = document.createElement('a');
   parser.href = url;
 
