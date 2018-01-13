@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { setAppDrawerSwitch } from '../../actions';
 
 // Material UI
@@ -69,7 +70,7 @@ class AppBar extends React.Component<Props>
           </IconButton>
           <AppBarTitle title={title} width={width} />
           <AppBarSearch width={width} />
-          <Button color="contrast" aria-label="登录">登录</Button>
+          <Button component={Link} to='/login' color="contrast" aria-label="登录">登录</Button>
         </Toolbar>
       </AppBarProvider>
     );

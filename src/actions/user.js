@@ -26,7 +26,7 @@ export function getAccessToken(): string | false {
   const nowAt = (new Date).getTime() / 1000;
   const expiresAt = window.localStorage.getItem('access_token_expires_at');
 
-  if (nowAt =< expiresAt) {
+  if (nowAt <= expiresAt) {
     return false;
   }
 
@@ -40,7 +40,7 @@ export function getAccessToken(): string | false {
  * @param {integer} expiresIn
  * @author Seven Du <shiweidu@outlook.com>
  */
-export function setAccessToken(accessToken: string, expiresIn: integer) {
+export function setAccessToken(accessToken: string, expiresIn: number) {
   const nowAt = (new Date).getTime();
   window.localStorage.setItem('access_token', accessToken);
   window.localStorage.setItem('access_token_expires_at', nowAt + expiresIn);
