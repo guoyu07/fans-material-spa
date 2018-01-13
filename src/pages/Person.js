@@ -4,6 +4,7 @@ import * as React from 'react';
 import browserTitle from '../utils/browserTitle';
 import AppBarProvider from '../modules/app-bar/AppBarProvider';
 import NavigationProvider from '../modules/navigation/NavigationProvider';
+import { replaceRootPath } from '../utils/history';
 
 type Props = {
   width: string,
@@ -25,6 +26,7 @@ class Person extends React.Component <Props> {
 
   componentDidMount() {
     browserTitle('个人资料');
+    replaceRootPath('/person');
   }
 }
 

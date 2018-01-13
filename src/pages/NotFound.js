@@ -13,7 +13,7 @@ import Typography from 'material-ui/Typography';
 import ArrowBackIcon from 'material-ui-icons/ArrowBack';
 
 import AppBarProvider from '../modules/app-bar/AppBarProvider';
-import handleGoBackPage from '../utils/handleGoBackPage';
+import { handleBack } from '../utils/history';
 
 const styles = withStyles((theme: Object) => ({
   root: {
@@ -53,7 +53,7 @@ class NotFound extends React.Component <Props> {
       <div className={classes.root}>
         <AppBar position="fixed">
           <Toolbar>
-            <IconButton onClick={handleGoBackPage} classes={{ root: classes.back }} color="contrast" aria-label="返回上一级">
+            <IconButton onClick={handleBack} classes={{ root: classes.back }} color="contrast" aria-label="返回上一级">
               <ArrowBackIcon />
             </IconButton>
             <Typography type="title" color="inherit">
