@@ -52,6 +52,7 @@ const styles = withStyles((theme: Object) => ({
 
 type Props = {
   width: string,
+  classes: Object,
 };
 
 type State = {
