@@ -30,7 +30,6 @@ import { handleBack } from '../utils/history';
 const styles = withStyles((theme: Object) => ({
   root: {
     width: '100%',
-    minHeight: '100vh',
     paddingTop: 56,
   },
   back: {
