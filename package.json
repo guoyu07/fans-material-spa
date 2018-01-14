@@ -32,7 +32,9 @@
     "size-limit": "^0.13.2",
     "source-map-explorer": "^1.5.0"
   },
-  "size-limit": [{
-    "path": "build/static/js/*.js"
-  }]
+  "size-limit": [
+    {
+      "path": "build/static/js/*.js"
+    }
+  ]
 }
