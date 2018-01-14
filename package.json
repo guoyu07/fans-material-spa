@@ -2,14 +2,15 @@
   "private": true,
   "scripts": {
     "analyze": "source-map-explorer build/static/js/main.*",
-    "predeploy": "npm run build",
+    "build:404.html": "node scripts/build-404.js",
     "deploy": "gh-pages -d build -m \"chore: Build SPA & Update assets.\" -t",
+    "predeploy": "npm run build",
     "start": "react-scripts start",
+    "size": "size-limit",
     "build": "react-scripts build && npm run build:404.html",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "flow": "flow",
-    "build:404.html": "node scripts/build-404.js"
+    "flow": "flow"
   },
   "dependencies": {
     "classnames": "^2.2.5",
@@ -28,6 +29,10 @@
     "flow-bin": "^0.61.0",
     "gh-pages": "^1.1.0",
     "react-scripts": "^1.0.17",
+    "size-limit": "^0.13.2",
     "source-map-explorer": "^1.5.0"
-  }
+  },
+  "size-limit": [{
+    "path": "build/static/js/*.js"
+  }]
 }
