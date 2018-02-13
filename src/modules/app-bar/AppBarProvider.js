@@ -14,7 +14,7 @@ const styles = withStyles(() => ({
   },
   xsRoot: {
     paddingTop: 56,
-    minHeight: '100vh',
+    // minHeight: '100vh',
   }
 }));
 
