@@ -79,13 +79,13 @@ class Login extends React.Component<Props, State> {
         <div className={classes.root}>
           <AppBar position="fixed">
             <Toolbar>
-              <IconButton onClick={handleBack} classes={{ root: classes.back }} color="contrast" aria-label="返回上一级">
+              <IconButton onClick={handleBack} classes={{ root: classes.back }} color="inherit" aria-label="返回上一级">
                 <ArrowBackIcon />
               </IconButton>
-              <Typography type="title" color="inherit" className={classes.title}>
+              <Typography variant="title" color="inherit" className={classes.title}>
                 登录账号
               </Typography>
-              <Button color="contrast" aria-label="登录账号">
+              <Button color="inherit" aria-label="登录账号">
                 <CheckIcon className={classes.loginButtonIcon} />登录
               </Button>
             </Toolbar>

@@ -53,10 +53,10 @@ class NotFound extends React.Component <Props> {
       <div className={classes.root}>
         <AppBar position="fixed">
           <Toolbar>
-            <IconButton onClick={handleBack} classes={{ root: classes.back }} color="contrast" aria-label="返回上一级">
+            <IconButton onClick={handleBack} classes={{ root: classes.back }} color="inherit" aria-label="返回上一级">
               <ArrowBackIcon />
             </IconButton>
-            <Typography type="title" color="inherit">
+            <Typography variant="title" color="inherit">
               Not Found
             </Typography>
           </Toolbar>

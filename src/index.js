@@ -9,6 +9,7 @@ import store from './createStore';
 
 // Mateial UI
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Reboot from 'material-ui/Reboot';
 import theme from './createTheme';
 
 // Modules
@@ -22,6 +23,7 @@ import App from './App';
  */
 const Root = () => (
   <MuiThemeProvider theme={theme}>
+    <Reboot />
     <ReduxProvider store={store}>
       <App />
     </ReduxProvider>

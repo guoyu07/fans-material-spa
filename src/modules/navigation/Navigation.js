@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 // Material UI
 import withStyles from 'material-ui/styles/withStyles';
 import AppBar from 'material-ui/AppBar';
-import BottomNavigation, { BottomNavigationButton } from 'material-ui/BottomNavigation';
+import BottomNavigation, { BottomNavigationAction } from 'material-ui/BottomNavigation';
 
 // Icons
 import HomeIcon from 'material-ui-icons/Home';
@@ -57,10 +57,10 @@ class Navigation extends React.Component<Props, State> {
           showLabels={showLabels}
           value={value}
         >
-          <BottomNavigationButton component={Link} to="/" replace label="首页" value="home" icon={<HomeIcon />} />
-          <BottomNavigationButton component={Link} to="/forums" replace label="论坛" value="forum" icon={<ForumIcon />} />
-          <BottomNavigationButton component={Link} to="/tags" replace label="标签" value="tag" icon={<LocalOfferIcon />} />
-          <BottomNavigationButton component={Link} to="/person" replace label="个人" value="person" icon={<PersonIcon />} />
+          <BottomNavigationAction component={Link} to="/" replace label="首页" value="home" icon={<HomeIcon />} />
+          <BottomNavigationAction component={Link} to="/forums" replace label="论坛" value="forum" icon={<ForumIcon />} />
+          <BottomNavigationAction component={Link} to="/tags" replace label="标签" value="tag" icon={<LocalOfferIcon />} />
+          <BottomNavigationAction component={Link} to="/person" replace label="个人" value="person" icon={<PersonIcon />} />
         </BottomNavigation>
       </AppBar>
     );
