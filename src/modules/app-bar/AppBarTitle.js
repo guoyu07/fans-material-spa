@@ -41,14 +41,14 @@ class AppBarTitle extends React.Component <Props> {
 
     if (width === 'xs') {
       return (
-        <Typography noWrap={true} aria-label="标题" type="title" color="inherit" className={classes.root}>
+        <Typography noWrap={true} aria-label="标题" variant="title" color="inherit" className={classes.root}>
           { title === '首页' ? 'Fans': title }
         </Typography>
       );
     }
 
     return (
-      <Typography noWrap={true} aria-label="标题" type="title" color="inherit" className={classes.root}>
+      <Typography noWrap={true} aria-label="标题" variant="title" color="inherit" className={classes.root}>
         <span className={classes.app}>Fans</span>{ title }
       </Typography>
     );

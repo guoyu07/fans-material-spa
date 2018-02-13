@@ -88,7 +88,7 @@ class AppBarSearch extends React.Component <Props> {
    */
   renderSearchButton (): React.Node {
     return (
-      <IconButton color="contrast" aria-label="搜索">
+      <IconButton color="inherit" aria-label="搜索">
         <SearchIcon />
       </IconButton>
     );
@@ -106,7 +106,7 @@ class AppBarSearch extends React.Component <Props> {
 
     return (
       <div className={classes.wrapper}>
-        <div className={classes.search} color="contrast">
+        <div className={classes.search}>
           <SearchIcon />
         </div>
         <input aria-label="搜索" className={classes.input} />

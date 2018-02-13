@@ -79,10 +79,10 @@ class MobileAppDrawer extends React.Component <Props> {
       >
         <AppBar position="static">
           <Toolbar>
-            <Typography noWrap={true} aria-label="标题" type="title" color="inherit" className={classes.title}>
+            <Typography noWrap={true} aria-label="标题" variant="title" color="inherit" className={classes.title}>
               Fans
             </Typography>
-            <IconButton color="contrast" aria-label="关闭菜单" onClick={() => this.handleClose()}>
+            <IconButton color="inherit" aria-label="关闭菜单" onClick={() => this.handleClose()}>
               <CloseIcon />
             </IconButton>
           </Toolbar>

@@ -65,12 +65,12 @@ class AppBar extends React.Component<Props>
     return (
       <AppBarProvider position="fixed">
         <Toolbar>
-          <IconButton onClick={this.handleToggleDrawer} classes={{ root: classes.menu }} color="contrast" aria-label="菜单">
+          <IconButton onClick={this.handleToggleDrawer} classes={{ root: classes.menu }} color="inherit" aria-label="菜单">
             <MenuIcon />
           </IconButton>
           <AppBarTitle title={title} width={width} />
           <AppBarSearch width={width} />
-          <Button component={Link} to='/login' color="contrast" aria-label="登录">登录</Button>
+          <Button component={Link} to='/login' color="inherit" aria-label="登录">登录</Button>
         </Toolbar>
       </AppBarProvider>
     );
